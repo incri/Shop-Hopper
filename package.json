@@ -1,0 +1,24 @@
+{
+  "name": "shop_hopper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./public/styles.css",
+    "watch": "tailwindcss -i ./src/styles.css -o ./public/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/incri/Shophopper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/incri/Shophopper/issues"
+  },
+  "homepage": "https://github.com/incri/Shophopper#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
