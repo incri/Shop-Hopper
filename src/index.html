@@ -10,41 +10,79 @@
 </head>
 
 <body>
-    <div class="fixed container text-gray-600 min-w-full h-16 flex items-center">
+
+    <div class="relative text-gray-600 min-w-full h-16 flex items-center">
         <a href="#" class="mt-max mb-max w-max  h-max ml-16">Need help? Call us:(+977) 9814604801</a>
-        <a href="#" class=" flex items-center ml-40 relative left-96">
+        <a href="#" class=" flex items-center ml-48 relative left-96">
             <img src="./img/location-pin-svgrepo-com.svg" class="w-8 h-8">
             <span>Our Store</span>
         </a>
         <a href="#" class="flex items-center w-max ml-10 relative left-96">
-            <img src="./img/delivery-fast-svgrepo-com.svg" class="w-12 h-12 ">
+            <img src="./img/delivery-fast-svgrepo-com.svg" class="w-8 h-8 ">
             <span> Track your order</span>
         </a>
-
     </div>
 
-    <nav class="fixed container min-w-full h-24 top-16 flex items-center bg-hexBlue text-white">
+    <nav class="relative min-w-full h-24 flex items-center  bg-hexBlue">
         <div>
             <img src="./img/logo.png" class="ml-16 mt-max mb-max h-20">
         </div>
         <input type="text" class="ml-20 text-gray-600 h-14 pl-4 w-64 rounded-l-3xl ">
-        <button class="h-14 bg-hexYellow w-32  rounded-r-3xl">Search</button>
+        <button class="h-14 bg-hexYellow w-32  rounded-r-3xl text-white">Search</button>
         <div class="text-white flex items-center">
-            <a href="#" class="ml-40">
-                <img src="./img/profile-user-avatar-man-person-svgrepo-com.svg" class="w-8 h-8 pr-2">
-                <span>Sign in</span>
+            <a href="#" class="flex items-center ml-28">
+                <img src="./img/profile-user-avatar-man-person-svgrepo-com.svg" class="w-8 h-8 p-2">
+                <span>Log in</span>
             </a>
-            <a href="#" class="ml-20">
-                <img src="./img/heart-svgrepo-com.svg" class="w-8 h-8 pr-2">
-                <span>Liked</span>
+            <a href="#" class="flex items-center ml-12">
+                <img src="./img/heart-svgrepo-com.svg" class="w-8 h-8 p-2">
+                <span>Sign up</span>
             </a>
-            <a href="#" class="ml-24 pr-20">
-                <img src="./img/cart-svgrepo-com.svg" class="w-8 h-8 pr-2">
+            <a href="#" class="flex items-center ml-12">
+                <img src="./img/cart-svgrepo-com.svg" class="w-8 h-8 p-2">
                 <span>Cart</span>
             </a>
         </div>
+    </nav>
+
+    <nav class="bg-hexGray flex items-center">
+        <div class="relative flex items-center">
+            <button class="flex items-center ml-4 text-white h-11" id="catagories_button">
+                <span>categories</span>
+                <img src="./img/arrow-drop-down-svgrepo-com.svg" class="w-8  h-8">
+            </button>
+            <div class="bg-white w-max p-4 h-max absolute bottom-0 left-5 top-10 border-2 hidden"
+                id="catagories_containt">
+                <a href="#" class="block hover:bg-hexGray p-2">
+                    Option 12345678
+                </a>
+
+                <a href="#" class="block hover:bg-hexGray p-2">
+                    Option 12345678
+                </a>
+
+                <a href="#" class="block hover:bg-hexGray p-2">
+                    Option 12345678
+                </a>
+
+                <a href="#" class="block hover:bg-hexGray p-2">
+                    Option 12345678
+                </a>
+            </div>
+        </div>
+        <div class="flex items-center ml-16 mr-96">
+            <a href="#" class="mr-10 w-max h-max p-1">home</a>
+            <a href="#" class="mr-10 w-max h-max p-1">about us</a>
+            <a href="#" class="mr-10 w-max h-max p-1">blog</a>
+
+        </div>
+        <div class="ml-52 text-hexBlue font-bold">
+            <h1>7 Days Free Return</h1>
+        </div>
+
 
     </nav>
+    <script src="./js/home.js"></script>
 </body>
 
 </html>
