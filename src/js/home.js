@@ -19,44 +19,46 @@ class Dropdown {
 
 }
 
-const catagories_dropdown = new Dropdown("catagories_button", "catagories_containt", "hp_1", "hp_2", "hp_3");
+const catagories_dropdown = new Dropdown("catagories_button", "catagories_containt");
 
 
 class HighlightedProduct {
-    constructor(highlighted1, highlighted2, highlighted3) {
-        this.hp1 = document.getElementById(highlighted1);
-        this.hp2 = document.getElementById(highlighted2);
-        this.hp3 = document.getElementById(highlighted3);
-        this.hp1.addEventListener("click", this.hp2Img.bind(this));
-        this.hp2.addEventListener("click", this.hp3Img.bind(this));
-        this.hp3.addEventListener("click", this.hp1Img.bind(this));
+    constructor(highlighted_ad, adDetails, imageArray, imageArrayDetails, interval) {
+        this.highlighted_image = document.getElementById(highlighted_ad);
+        this.imageDetails = document.getElementById(adDetails);
+        this.imageArray = imageArray;
+        this.imageArrayDetails = imageArrayDetails;
+        this.index = 0;
+        this.interval = interval;
 
 
     }
 
-    hp2Img() {
-        this.hp1.classList.remove("flex")
-        this.hp1.classList.add("hidden")
-        this.hp2.classList.remove("hidden")
-        this.hp2.classList.add("flex")
+    startChange() {
+        setInterval(() => {
+            this.changeImage();
+            this.changeDetails();
+        }, this.interval);
+    }
+
+    changeImage() {
+        this.highlighted_image.setAttribute("src", this.imageArray[this.index]);
+        this.index++;
+        if (this.index >= this.imageArray.length) {
+            this.index = 0;
+        }
 
     }
 
-    hp3Img() {
-        this.hp2.classList.remove("flex")
-        this.hp2.classList.add("hidden")
-        this.hp3.classList.remove("hidden")
-        this.hp3.classList.add("flex")
-
-    }
-
-    hp1Img() {
-        this.hp3.classList.remove("flex")
-        this.hp3.classList.add("hidden")
-        this.hp1.classList.remove("hidden")
-        this.hp1.classList.add("flex")
+    changeDetails() {
+        this.imageDetails.textContent = this.imageArrayDetails[this.index];
+        this.index++;
+        if (this.index >= this.imageArrayDetails.length) {
+            this.index = 0;
+        }
 
     }
 }
 
-const imageChanger = new HighlightedProduct("hp_1", "hp_2", "hp_3");
+let changer = new HighlightedProduct("highlighted_image", "highlightedImageDetails", ["./img/highlited_ads/ad1.jpg", "./img/highlited_ads/ad2.jpg", "./img/highlited_ads/ad3.jpg"], ["Wear cotton, Wear Comfort", "A CULTURAL CONFLUNCE", "It's the way you make me feel"], 3000);
+changer.startChange();
