@@ -35,6 +35,8 @@ class HighlightedProduct {
     }
 
     startChange() {
+        this.changeImage();
+        this.changeDetails();
         setInterval(() => {
             this.changeImage();
             this.changeDetails();
@@ -60,5 +62,5 @@ class HighlightedProduct {
     }
 }
 
-let changer = new HighlightedProduct("highlighted_image", "highlightedImageDetails", ["./img/highlited_ads/ad1.jpg", "./img/highlited_ads/ad2.jpg", "./img/highlited_ads/ad3.jpg"], ["Wear cotton, Wear Comfort", "A CULTURAL CONFLUNCE", "It's the way you make me feel"], 3000);
+let changer = new HighlightedProduct("highlighted_image", "highlightedImageDetails", ["./img/highlited_ads/ad1.jpg", "./img/highlited_ads/ad2.jpg", "./img/highlited_ads/ad3.jpg"], ["Wear cotton, Wear Comfort", "A CULTURAL CONFLUNCE", "It's the way you make me feel"], 5000);
 changer.startChange();
