@@ -64,3 +64,41 @@ class HighlightedProduct {
 
 let changer = new HighlightedProduct("highlighted_image", "highlightedImageDetails", ["./img/highlited_ads/ad1.jpg", "./img/highlited_ads/ad2.jpg", "./img/highlited_ads/ad3.jpg"], ["Wear cotton, Wear Comfort", "A CULTURAL CONFLUNCE", "It's the way you make me feel"], 5000);
 changer.startChange();
+
+
+class ProductFavorite {
+    constructor(favButton, favIcon, iconArray) {
+        this.favButtons = document.querySelectorAll(favButton)
+        this.favIcons = document.querySelectorAll(favIcon)
+        this.iconArray = iconArray
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        this.favButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                this.favControl(index);
+            });
+        });
+    }
+
+    favControl(index) {
+        let icon = this.favIcons[index].getAttribute("src")
+        if (icon == this.iconArray[0]) {
+            this.favIcons[index].classList.add("animate-bounce");
+            setTimeout(() => {
+                this.favIcons[index].classList.remove("animate-bounce");
+            }, 1000);
+            this.favIcons[index].setAttribute("src", this.iconArray[1]);
+        }
+        else {
+            this.favIcons[index].classList.add("animate-bounce");
+            setTimeout(() => {
+                this.favIcons[index].classList.remove("animate-bounce");
+            }, 1000);
+            this.favIcons[index].setAttribute("src", this.iconArray[0]);
+        }
+    }
+}
+
+let favController = new ProductFavorite(".productFavButton", ".favIcon", ["./img/non_fav.svg", "./img/fav.svg"]);
