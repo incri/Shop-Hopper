@@ -85,17 +85,10 @@ class ProductFavorite {
     favControl(index) {
         let icon = this.favIcons[index].getAttribute("src")
         if (icon == this.iconArray[0]) {
-            this.favIcons[index].classList.add("animate-bounce");
-            setTimeout(() => {
-                this.favIcons[index].classList.remove("animate-bounce");
-            }, 1000);
+
             this.favIcons[index].setAttribute("src", this.iconArray[1]);
         }
         else {
-            this.favIcons[index].classList.add("animate-bounce");
-            setTimeout(() => {
-                this.favIcons[index].classList.remove("animate-bounce");
-            }, 1000);
             this.favIcons[index].setAttribute("src", this.iconArray[0]);
         }
     }
